@@ -8,4 +8,4 @@ Full RPi img can be downloaded from here: https://thomy.stackstorage.com/s/KbCfV
 
 - RPi Code/Frontend: html -> /var/www/
 - RPI Code/Backend: project -> /home/pi/
-- Feeder extension: Load in Chrome developper mode.
+- Feeder extension: Load in Chrome developer mode.
