@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Feeder Dashboard</title>
+        <meta name="description" content="Feeder Dashboard">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/screen.css">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#44C8F5">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+
+        <script src="script/dataHandler.js"></script>
+        <script src="script/app.js"></script>       
+
+    </head>
+    <body>
+        <div class="c-header-container">
+            <div class="o-row">
+                <div class="o-container">
+                    <header class="c-header o-layout o-layout--align-center">
+                        <h1 class="c-logo">
+                            <a href="index.html"><img class="c-logo_symbol" src="img/logo_nopadding.png" alt="home page icon"></a>
+                        </h1>
+                        <button type="menu" class="c-menu-icon js-btn-menu">
+                            <svg class="c-menu-icon_symbol" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+                        </button>
+                        <div class="c-header__nav js-menu">
+                            <nav class="c-nav">
+                                <ul class="o-list c-nav__list">
+                                    <li class="c-nav__item"><a class="c-nav__link" href="index.html">Home</a></li>
+                                    <li class="c-nav__item"><a class="c-nav__link" href="data.html">Data</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </header>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="c-content o-row">
+            <div class="o-container u-max-width-lg">
+                <div class="c-active o-layout o-layout--justify-center">
+                    <div class="o-title o-layout__item">
+                        <h2>Active</h2>
+                    </div>
+                    <div class="js-presets o-layout__item">
+                        <div class="c-preset o-layout__item o-layout o-layout--justify-space-between o-layout--align-center">
+                            <div class="o-setting js-preset-setting u-1-of-2">Loading...</div>
+                            <div class="o-setting u-1-of-2 o-layout o-layout--justify-end">
+                                <svg class="js-preset-edit" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+                            </div>
+                            <div class="js-edit c-settings o-layout__item u-max-width-lg o-layout o-layout--justify-start">
+                                <div class="u-1-of-4 o-setting">
+                                    <select name="days" id="days" class="js-create-day">
+                                        <option value="1">Monday</option>
+                                        <option value="2">Tuesday</option>
+                                        <option value="3">Wednesday</option>
+                                        <option value="4">Thursday</option>
+                                        <option value="5">Friday</option>
+                                        <option value="6">Saturday</option>
+                                        <option value="7">Sunday</option>
+                                    </select>
+                                </div>
+                                
+                                
+                                <div class="u-1-of-4 c-timestamp o-setting">
+                                    <input class="js-create-time" type="time" name="timestamp" step="60">
+                                </div>
+                
+                                <div class="u-1-of-4 c-amount o-setting">
+                                    <input class="c-amount js-create-amount" type="number" id="quantity" name="quantity" min="10" max="100">
+                                </div>
+
+                                <div class="u-1-of-4 o-setting">
+                                    <button type="button" class="o-button js-edit-confirm u-1-of-4">Confirm</button>
+                                </div>
+                                
+                            </div>
+                            <hr class="o-layout__item">
+                        </div>
+                    </div> 
+                </div>
+
+                <div class="c-active u-padding-bottom o-layout o-layout--justify-center" preset-id="1">
+                    <div class="o-title o-layout__item">
+                        <h2>Presets</h2>
+                    </div>
+                    <div class="c-settings o-layout__item u-max-width-lg o-layout o-layout--gutter-lg o-layout--justify-space-around">
+                        <div class="o-layout__item u-1-of-3-bp3 o-setting">
+                            <label for="days">Day: </label>
+                            <select name="days" id="days" class="js-create-day">
+                                <option value="1">Monday</option>
+                                <option value="2">Tuesday</option>
+                                <option value="3">Wednesday</option>
+                                <option value="4">Thursday</option>
+                                <option value="5">Friday</option>
+                                <option value="6">Saturday</option>
+                                <option value="7">Sunday</option>
+                            </select>
+                        </div>
+                        
+                        <div class="o-layout__item u-1-of-3-bp3 c-timestamp o-setting">
+                            <label for="timestamp">Time: </label>
+                            <input class="js-create-time" type="time" name="timestamp" step="60">
+                        </div>
+        
+                        <div class="o-layout__item u-1-of-3-bp3 c-amount o-setting">
+                            <label for="quantity"> Amount (g): </label>
+                            <input class="c-amount js-create-amount" type="number" id="quantity" name="quantity" min="10" max="100">
+                        </div>
+                        <button type="button" class="o-button js-create-confirm">Confirm</button>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    
+    </body>
+</html>

@@ -1,0 +1,271 @@
+/*
+    Elements: Page
+    ---
+    Default markup for page level elements
+*/
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    color: #111;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smooting: grayscale;
+    box-sizing: border-box;
+}
+
+
+*,
+*:before,
+*:after{
+    box-sizing: inherit;
+}
+
+img{
+    max-width: 100%;
+    vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1 {
+    font-family: "Times New Roman", serif;
+    font-size: 36px;
+    font-weight: normal;
+    line-height: 40px;
+    margin: 0 0 48px;
+}
+
+h2 {
+    font-size: 23px;
+    line-height: 32px;
+    margin: 0 0 12px;
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0 0 24px;
+}
+
+h4,
+h5,
+h6 {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 0 24px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+    margin: 0 0 24px;
+}
+
+
+blockquote {
+    font-style: italic;
+    font-size: 23px;
+    line-height: 32px;
+    margin: 0 0 24px;
+    font-family: "Times New Roman", serif;
+}
+
+ul,
+ol  {
+    padding-left: 24px;
+}
+
+li ul,
+li ol{
+    margin-bottom: 0;
+}
+
+blockquote * {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+figcaption {
+    font-size: 12px;
+    line-height: 16px;
+    padding-top: 8px;
+    color: gray;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: lightgray;
+    margin: 0 0 24px;
+}
+
+a {
+    color: royalblue;
+    transition: all .1s ease-in-out;
+}
+a:visited,
+a:active {
+    color: blueviolet;
+}
+
+footer{
+    font-size: 12px;
+    margin: 12px;
+}
+
+
+
+table{
+    width: 100%;
+    border-spacing: 0;
+}
+th{
+    text-align: left;
+}
+th,
+td {
+    padding: 4px 8px;
+    border-bottom: 1px solid gainsboro;
+}
+.odd{
+    background-color: whitesmoke;
+}
+
+/*
+
+    Components: Top nav
+
+*/
+
+.c-header{
+    background: #44C9F6;
+    color: white;
+    
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+    padding: 16px 26px;
+}
+
+
+.c-top_nav__menu a,
+.c-top_nav__menu li{
+    color: white;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: lightgray;
+}
+
+.c-top_nav__title{
+    margin: 0;
+}
+
+.c-top_nav__menu li{
+    display: inline-block;
+    padding: 0 10px
+}
+
+.c-top_nav__menu ul{
+    padding: 0;
+    margin: 0;
+}
+
+/*
+
+    Components: Content
+
+*/
+
+.c-content{
+    padding: 0 24px 0;
+}
+
+/*
+
+    Components: Status
+
+*/
+
+.c-status li{
+    display: inline-flex;
+}
+
+/*
+    Media Queries
+    ---
+    EXAMPLE Media Queries for Responsive Design.
+    These examples override the primary ('mobile first') styles.
+    Modify as content requires.
+*/
+
+
+/* Extra small devices (portrait phones, less than 576px)
+   No media query since this is the default in Bootstrap
+*/
+
+@media (min-width: 200px) {
+    .c-top_nav__title{
+        font-size: 15px;
+    }
+
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    h1{
+        font-size: 58px;
+        line-height: 64px;
+    }
+
+}
+
+/* Large devices (landscape tablets, desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
+}
+
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #44C8F5;
+    color: white;
+    text-shadow: none;
+}
+
+::selection {
+    background: #44C8F5;
+    color:white;
+    text-shadow: none;
+}

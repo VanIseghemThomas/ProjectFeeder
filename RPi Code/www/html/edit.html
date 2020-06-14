@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Feeder Dashboard</title>
+        <meta name="description" content="Feeder Dashboard">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/screen.css">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#44C8F5">
+
+        <script src="script/dataHandler.js"></script>
+        <script src="script/app.js"></script>       
+
+    </head>
+    <body>
+        <div class="c-header-container">
+            <div class="o-row">
+                <div class="o-container">
+                    <header class="c-header">
+                        <h1 class="c-logo">
+                            Edit preset
+                        </h1>
+                    </header>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="c-content o-row">
+            <div class="o-container u-max-width-sm">
+                <div class="c-settings o-layout o-layout--gutter-lg o-layout--justify-space-evenly">
+                    <div class="o-layout__item u-1-of-3-bp3 o-setting">
+                        <label for="days">Day: </label>
+                        <select name="days" id="days">
+                            <option value="1">Monday</option>
+                            <option value="2">Tuesday</option>
+                            <option value="3">Wednesday</option>
+                            <option value="4">Thursday</option>
+                            <option value="5">Friday</option>
+                            <option value="6">Saturday</option>
+                            <option value="7">Sunday</option>
+                        </select>
+                    </div>
+                    
+                    <div class="o-layout__item u-1-of-3-bp3 c-timestamp o-setting">
+                        <label for="timestamp">Time: </label>
+                        <input type="time" name="timestamp" step="60">
+                    </div>
+    
+                    <div class="o-layout__item u-1-of-3-bp3 c-amount o-setting">
+                        <label for="quantity"> Amount (g): </label>
+                        <input class="c-amount" type="number" id="quantity" name="quantity" min="10" max="100">
+                    </div>
+                </div>
+                
+                <div class="o-layout__item o-layout o-layout--gutter-lg o-layout--justify-space-around">
+
+                    <a class="o-button u-1-of-3" href="schema.html">Cancel</a>
+                    <button type="button" class="o-button js-edit-confirm u-1-of-3">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
