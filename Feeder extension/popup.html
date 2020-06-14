@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feeder popup</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="socket.io.js"></script>
+    <script src="dataHandler.js"></script>
+    <script src="popup.js"></script>
+</head>
+<body>
+    <div class="c-logo-bar">
+        <img src="logo_nopadding.png" alt="logo">
+    </div>
+    <div class="c-content">
+        <div class="c-settings o-layout">
+
+  
+            
+            <label for="ip"><strong>IP-address:</strong></label>
+            <input class="c-ip js-input-ip" type="text" id="ip" name="ip" value="192.168.">
+            <div class="js-input-ip_message">
+            </div>
+
+            <button type="button" class="c-button js-connect o-layout__item">Connect</button> 
+        </div>
+        <div class="c-controls o-layout">
+            <div class="js-container">Loading...</div>
+            <div class="c-status-bar">
+                <div class="js-bar c-status-bar_progress"></div>
+            </div>
+            <div class="o-layout__item">
+                <div class="c-amount-label js-amount-label o-layout__item">Set amount:</div>
+                <input class="c-slider js-slider" type="range" id="quantity" name="quantity" min="20" max="100" value="20  " step="20">
+            </div>  
+            <button type="button" class="c-button js-feed o-layout__item">Feed</button>        
+        </div>
+    </div>
+
+</body>
+</html>

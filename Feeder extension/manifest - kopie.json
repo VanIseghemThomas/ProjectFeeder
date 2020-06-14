@@ -1,0 +1,25 @@
+{
+    "name": "Feeder extension",
+    "version": "1.0.1",
+    "description": "Feed pets from Chrome browser",
+    "manifest_version": 2,
+    "content_scripts": [
+        {
+          "matches": [
+            "<all_urls>"
+          ],
+          "js": ["content.js"]
+        }
+    ],
+    "browser_action": {
+        "default_icon": "default.png"
+    },
+    "background": {
+        "scripts": [
+          "socket.io.js",
+          "background.js"
+        ]
+    },
+    "web_accessible_resources": ["pageScript.js"]
+    
+}
